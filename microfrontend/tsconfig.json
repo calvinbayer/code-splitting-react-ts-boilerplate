@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "esnext",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src", "webpack.config.ts"],
+  "exclude": ["src/standalone/*", "**/webpack.config.ts"],
+  "ts-node": { "compilerOptions": { "module": "CommonJS" } }
+}

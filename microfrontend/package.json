@@ -1,0 +1,32 @@
+{
+  "name": "microfrontend",
+  "version": "1.0.0",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "typings": "lib/types/index.d.ts",
+  "scripts": {
+    "build:standalone": "webpack --mode production",
+    "start:standalone": "webpack serve --open --mode development",
+    "build:esm": "tsc --module esnext --outDir lib/esm",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir lib/types",
+    "build": "yarn build:esm && yarn build:types",
+    "start": "concurrently \"yarn build:esm --watch\" \"yarn build:types --watch\""
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "@types/webpack": "^5.28.0",
+    "concurrently": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

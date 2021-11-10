@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "workspaces": [
+    "microfrontend",
+    "shell"
+  ],
+  "scripts": {
+    "start": "concurrently \"yarn workspace microfrontend start\" \"yarn workspace shell start\""
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
